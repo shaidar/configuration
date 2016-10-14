@@ -36,7 +36,7 @@ RABBITMQ_VHOSTS:
   - '/'
 
 RABBITMQ_CLUSTERED_HOSTS: []
-RABBITMQ_VERSION: 3.6.1-1
+RABBITMQ_VERSION: 3.6.5-1
 
 # Internal role variables below this line
 
