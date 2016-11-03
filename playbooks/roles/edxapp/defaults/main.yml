@@ -132,6 +132,7 @@ EDXAPP_ZENDESK_API_KEY: ""
 EDXAPP_CELERY_USER: 'celery'
 EDXAPP_CELERY_PASSWORD: 'celery'
 EDXAPP_CELERY_BROKER_VHOST: ""
+EDXAPP_CELERY_BROKER_USE_SSL: false
 
 EDXAPP_VIDEO_CDN_URLS:
   EXAMPLE_COUNTRY_CODE: "http://example.com/edx/video?s3_url="
@@ -692,7 +693,7 @@ edxapp_generic_doc_store_config: &edxapp_generic_default_docstore
   socketTimeoutMS: 3000 # default is never timeout while the connection is open, this means it needs to explicitly close raising pymongo.errors.NetworkTimeout
   connectTimeoutMS: 2000 # default is 20000, I believe raises pymongo.errors.ConnectionFailure
   # Not setting waitQueueTimeoutMS and waitQueueMultiple since pymongo defaults to nobody being allowed to wait
-  
+
 
 EDXAPP_LMS_DRAFT_DOC_STORE_CONFIG:
   <<: *edxapp_generic_default_docstore
@@ -814,6 +815,7 @@ generic_env_config:  &edxapp_generic_env
   ANALYTICS_DATA_URL: "{{ EDXAPP_ANALYTICS_DATA_URL }}"
   ANALYTICS_DASHBOARD_URL: '{{ EDXAPP_ANALYTICS_DASHBOARD_URL }}'
   CELERY_BROKER_VHOST: "{{ EDXAPP_CELERY_BROKER_VHOST }}"
+  CELERY_BROKER_USE_SSL: "{{ EDXAPP_CELERY_BROKER_USE_SSL }}"
   PAYMENT_SUPPORT_EMAIL: "{{ EDXAPP_PAYMENT_SUPPORT_EMAIL }}"
   ZENDESK_URL: "{{ EDXAPP_ZENDESK_URL }}"
   COURSES_WITH_UNSAFE_CODE: "{{ EDXAPP_COURSES_WITH_UNSAFE_CODE }}"
